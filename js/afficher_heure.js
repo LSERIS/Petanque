@@ -1,0 +1,1 @@
+setInterval(function(){document.getElementById('afficher_heure').innerHTML = new Date().toLocaleTimeString();}, 1000);
