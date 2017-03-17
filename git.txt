@@ -1,0 +1,8 @@
+git init   // depuis le répertoire du projet
+git add *  // ajoute tous les fichiers y compris ceux des sous-répertoires
+git commit -am "Ajout de tous les fichiers de base pour le projet depuis mon pc pro"  //validation des modifications à ce point là
+git status
+git clone https://github.com/LSERIS/Petanque.git
+git config --global push.default simple
+remote add origin https://github.com/LSERIS/Petanque.git
+push origin master  // synchro complète avec de dépôt en ligne

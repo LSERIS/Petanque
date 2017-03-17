@@ -1,0 +1,61 @@
+// install ssh
+apt-get install ssh (puis mofif dans le .conf du passwd autorisé à 'yes')
+
+
+// install bureau à distance
+apt-get install vino (ajouter dans les applications au démarrage)
+
+// install de sublimetext
+apt-get install sublimetext
+
+// install nginx
+apt-get install nginx-full
+systemctl status nginx.service
+vim /etc/nginx/sites-enabled/default
+
+// install php
+apt-get install php5-fpm
+cd /var/www/html
+vim phpinfo.php
+
+
+// install de sqlite3 (sur php5.4 sur raspberry)
+apt-get install php7.0-sqlite3
+service nginx stop
+service nginx start
+
+// création du fichier .sqlite avec le plugin firefox
+https://addons.mozilla.org/fr/firefox/addon/sqlite-manager/
+
+// modification du mot de passe
+vim phpliteadmin.config.php 
+
+// afficher l'outil de gestion de sqlite3
+localhost/phpliteadmin.php
+
+// attention aux droits en écriture sur tous les fichiers y compris le répertoire html
+chmod a+w *
+
+// install de Composer
+	/* This installer script will simply check some php.ini settings, warn you if they are set incorrectly, and then download the latest composer.phar in the current directory. The 4 lines above will, in order:
+
+	Download the installer to the current directory
+	Verify the installer SHA-384 which you can also cross-check here
+	Run the installer
+	Remove the installer */
+$bdd = new PDO('sqlite3:host=localhost;dbname=Petanque', 'root', 'Petanque');
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '55d6ead61b29c7bdee5cccfb50076874187bd9f21f65d8991d46ec5cc90518f447387fb9f76ebae1fbbacf329e583e30') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+	/* All settings correct for using Composer
+	Downloading...
+
+	Composer (version 1.3.2) successfully installed to: /var/www/html/phpsqliteconnect/composer.phar
+	Use it: php composer.phar
+	*/
+php -r "unlink('composer-setup.php');"
+
+php composer.phar update
+
+php composer.phar dump-autoload -o
+
+

@@ -1,0 +1,14 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE 'Joueurs_Equipe_A' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Nom_Prénom' TEXT);
+INSERT INTO "Joueurs_Equipe_A" VALUES(0,'AUDEON Gérard');
+INSERT INTO "Joueurs_Equipe_A" VALUES(1,'BOUPILLERE SABINE');
+INSERT INTO "Joueurs_Equipe_A" VALUES(2,'DUMOLIE Yannick');
+INSERT INTO "Joueurs_Equipe_A" VALUES(3,'BAYLAC Patrice');
+INSERT INTO "Joueurs_Equipe_A" VALUES(4,'DUPRAT Bruno');
+INSERT INTO "Joueurs_Equipe_A" VALUES(5,'TOULOUSE Jean-Pierre');
+INSERT INTO "Joueurs_Equipe_A" VALUES(6,'HELENO Victor');
+INSERT INTO "Joueurs_Equipe_A" VALUES(7,'GARIPUY Gilbert');
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('Joueurs_Equipe_A',7);
+COMMIT;
